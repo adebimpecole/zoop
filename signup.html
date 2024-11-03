@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ZOOP - Food Delivery System." />
+    <meta name="keywords" content="Delivery" />
+    <title>ZOOP</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" defer />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Montserrat:ital,wght@0,500;1,500&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Montserrat:ital,wght@0,500;1,500&display=swap"
+        rel="stylesheet"
+        type="text/css"
+      />
+    </noscript>
+
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="script/index.js" defer></script>
+    <script src="script/ratio.js" defer></script>
+    <script src="script/resize.js" defer></script>
+
+    <style>
+      html {
+        height: max-content;
+        min-height: 100vh;
+        width: 100vw;
+        background: var(--white);
+        font-size: var(--font-size-normal);
+        color: var(--black);
+        overflow-x: hidden;
+        background-image: url(./assets/images/bg-image.png);
+        background-size: 80vw auto;
+        /* background-attachment: fixed; */
+        background-position: center bottom;
+        background-repeat: no-repeat;
+      }
+
+      a {
+        text-decoration: none;
+        font-family: inherit;
+        color: inherit;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: var(--font-family-primary);
+        color: var(--gray);
+        min-height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header#page-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        top: 30px;
+        position: sticky;
+        width: 100%;
+        z-index: 40;
+      }
+
+      header#page-header.sticky {
+        position: sticky;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header id="page-header">
+      <div class="logo-wrapper">
+        <a href="#" class="logo">
+          <img
+            src="./assets/icons/logo.svg"
+            alt="zoop logo"
+            width="203.76"
+            height="48"
+          />
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <div class="heading">
+        <p class="heading-text">Welcome to Zoop👋🏽</p>
+        <h1 class="heading-text">Sign Up or Login</h1>
+      </div>
+      <div class="signup-container">
+        <a href="">
+          <img src="./assets/icons/google.svg" alt="google icon" />
+          <p>Continue with google</p>
+        </a>
+        <a href="">
+          <img src="./assets/icons/facebook.svg" alt="facebook icon" />
+          <p>Continue with Facebook</p>
+        </a>
+        <p>
+          <span>Restaurant Login</span>
+          <a href="#">Change</a>
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        <a href="#" class="footer-link">Privacy</a>
+        <a href="#" class="footer-link">Terms</a>
+      </p>
+    </footer>
+  </body>
+</html>
