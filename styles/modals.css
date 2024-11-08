@@ -1,0 +1,417 @@
+.onboarding-modal {
+  width: 800px;
+  height: 95vh;
+  padding: 2rem;
+  padding-bottom: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 0 0 0 100vmax #00000080;
+  background-image: url(../assets/images/bg-image.png);
+  background-size: 80% auto;
+  /* background-attachment: fixed; */
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 30;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.onboarding-modal > .heading {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+  margin-bottom: 20px;
+}
+.onboarding-modal > .heading p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: var(--font-size-normal);
+}
+.onboarding-modal > .heading ul {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--font-size-normal);
+}
+.onboarding-modal > .heading li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-gray);
+  color: var(--text-gray);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.onboarding-modal > .heading li.active a {
+  background-color: var(--vivid-red);
+  color: var(--white);
+}
+.onboarding-modal > .heading button,
+#back-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.onboarding-modal > .body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  overflow-y: scroll;
+  overflow-x: visible;
+  transition: all 0.3s ease;
+}
+.onboarding-modal > .body img {
+  width: 250px;
+}
+.onboarding-modal > .body > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 300px;
+  text-align: center;
+}
+.onboarding-modal > .body h2 {
+  font-size: var(--font-size-xlarge);
+  color: var(--black);
+  width: 300px;
+}
+.onboarding-modal .modal-text {
+  line-height: 1.4rem;
+}
+.onboarding-modal > .body > a {
+  font-size: var(--font-size-normal);
+  color: var(--white);
+  border: 3px solid;
+  background-image: linear-gradient(
+    90deg,
+    #ff6315 0%,
+    #ff411c 25%,
+    #ff1d23 50%,
+    #ff0728 75%,
+    #ff002a 100%
+  );
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 40px;
+  gap: 10px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+.onboarding-modal > .body > a:hover {
+  opacity: 1;
+}
+#back-button {
+  font-size: var(--font-size-normal);
+  color: var(--black);
+  border: 3px solid;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 40px;
+  gap: 10px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: background-color 0.3s ease;
+  border: none;
+  outline: none;
+  margin-top: 1rem;
+  background-image: none;
+}
+#back-button:hover {
+  background-color: #eaeaea6b;
+}
+
+/* step 1 */
+#step-1,
+#step-2,
+#step-3,
+#step-4 {
+  padding-bottom: 2rem;
+}
+#step-1 img {
+  width: 200px;
+  height: auto;
+  padding-top: 4rem;
+}
+#step-1 .body,
+#step-2 .body,
+#step-3 .body,
+#step-3 .body {
+  gap: 0;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+#step-1 .body > div,
+#step-2 .body > div,
+#step-3 .body > div,
+#step-3 .body > div {
+  width: 400px;
+  padding-block: 1rem;
+}
+#step-1 form,
+#step-2 form,
+#step-3 form,
+#step-3 form {
+  width: 500px;
+  padding-top: 10px;
+}
+.controls {
+  text-align: left;
+  position: relative;
+  width: 100%;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+.controls button {
+  padding: 1.5rem 0.9rem;
+  border: 1px solid var(--border-gray);
+  width: 100%;
+  margin-bottom: 18px;
+  color: var(--black);
+  font-size: var(--font-size-normal);
+  font-weight: 300;
+  background-color: transparent;
+  border-radius: 5px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"],
+.controls button {
+  outline: none;
+  /* border-color: var(--border-focus); */
+}
+label {
+  position: absolute;
+  left: 12px;
+  top: 1.35rem;
+  background-color: var(--white);
+  pointer-events: none;
+  transition: 0.3s;
+  padding: 0 4px;
+  background-color: transparent;
+}
+.dropdown label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  cursor: pointer;
+}
+input:focus + label,
+input:not(:placeholder-shown) + label,
+.dropdown.selected button + label {
+  top: -8px;
+  font-size: var(--font-size-small);
+}
+input:focus + label,
+input:not(:placeholder-shown) + label,
+.dropdown.selected button + label span {
+  background-color: var(--white);
+}
+.controls > ul,
+.dropdown-container {
+  border: 1px solid var(--border-gray);
+  position: absolute;
+  border-radius: 20px;
+  height: fit-content;
+  background-color: var(--white);
+  width: 300px;
+  padding-bottom: 1rem;
+  left: 0;
+  top: 4.5rem;
+  display: none;
+  z-index: 10;
+}
+.dropdown button {
+  cursor: pointer;
+}
+.dropdown svg {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+.dropdown.open svg {
+  transform: rotate(180deg);
+}
+.controls.open > ul,
+.dropdown.open .dropdown-container {
+  display: block;
+}
+.dropdown.selected label {
+  width: fit-content;
+}
+.dropdown.selected svg {
+  display: none;
+}
+.controls > ul li,
+.controls > ul span {
+  width: 100%;
+  text-align: left;
+}
+.controls > ul span,
+.dropdown-heading {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-gray);
+  font-size: var(--font-size-small);
+  display: block;
+}
+.controls > ul li {
+  padding: 1rem 2rem;
+  display: block;
+  font-size: var(--font-size-normal);
+  color: var(--black);
+  cursor: pointer;
+}
+.controls > ul li:hover {
+  padding: 1rem 2rem;
+  display: block;
+  font-size: var(--font-size-normal);
+  background-color: var(--light-gray);
+  cursor: pointer;
+}
+
+/* step 2 */
+#step-2 img {
+  width: 180px;
+  height: auto;
+  padding-top: 10rem;
+}
+.dropdown-container {
+  width: 420px;
+  background-color: var(--white);
+  z-index: 20;
+}
+.dropdown-heading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown-heading p {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  align-items: center;
+  color: var(--black);
+}
+.dropdown-container ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.8rem;
+  gap: 1rem;
+}
+.dropdown-container ul li {
+  border-radius: 15px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.dropdown-container ul li:hover {
+  background-color: var(--light-red);
+}
+.dropdown-container ul li.active {
+  border-radius: 15px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--vivid-red);
+  color: var(--vivid-red);
+}
+
+/* step 3 */
+#step-3 img {
+  width: 150px;
+  height: auto;
+  padding-top: 12rem;
+}
+#step-3 > .body > div,
+#step-3 > .body h2 {
+  width: 500px;
+}
+.controls .hint {
+  width: 100%;
+  text-align: right;
+  font-size: var(--font-size-small);
+  margin-top: -10px;
+  margin-bottom: 30px;
+  padding-right: 10px;
+  display: block;
+}
+.controls .info {
+  width: 100%;
+  font-size: var(--font-size-small);
+  /* margin-top: -10px; */
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.phone-number label {
+  position: absolute;
+  left: 12px;
+  top: 3.5rem;
+  background-color: var(--white);
+  pointer-events: none;
+  transition: 0.3s;
+  padding: 0 4px;
+  background-color: transparent;
+}
+.phone-number input:focus + label,
+.phone-number input:not(:placeholder-shown) + label {
+  top: 21px;
+  font-size: var(--font-size-small);
+}
+.phone-number input:focus + label,
+.phone-number input:not(:placeholder-shown) + label {
+  background-color: var(--white);
+}
+
+/* step 4 */
+#step-4 img {
+  width: 100px;
+  height: auto;
+  padding-top: 12rem;
+}
+#step-4 > .body > div,
+#step-4 > .body h2 {
+  width: 450px;
+}
+#map {
+  padding: 20px 0 !important;
+  width: 70% !important;
+}
+
+/* great */
+#user-great {
+  padding-bottom: 6rem;
+}
+#user-great img {
+  width: 230px;
+  height: auto;
+  padding-top: 3rem;
+}
+#user-great .body a {
+  margin-top: 2rem;
+}

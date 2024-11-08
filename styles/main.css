@@ -5,19 +5,28 @@
 }
 :root {
   --light-red: #fdf2f4;
+  --hover-red: #ffe9ec;
   --red: #ed3833;
+  --vivid-red: #ff0828;
   --white: #ffffff;
   --light-gray: #eaeaea;
   --gray: #818080;
   --reddish-gray: #aba3a4;
   --black: #000000;
   --blue: #0d74f6;
+  --text-gray: #a4a4a4;
+  --border-gray: #d5d5d5;
   --text-secondary-color: #7d7d86;
   --text-tetiary-color: #d8322d;
+  --border-gray: #ececec;
+  --green-5: #15d29a0d;
+--light-orange: #FFFBF3;
 
+  --font-size-small: 12px;
   --font-size-normal: 14px;
   --font-size-medium: 17px;
   --font-size-large: 20px;
+  --font-size-xlarge: 25px;
   --font-size-xxlarge: 30px;
 
   --font-family-primary: "Montserrat", sans-serif;
@@ -72,13 +81,19 @@ main {
   border-radius: 50px;
   padding: 1.3rem 3rem 1.3rem 1.7rem;
   gap: 1rem;
+  transition: background-color 0.3s ease;
 }
-.container p:first-child {
+.container > div a:hover {
+  background-color: var(--hover-red);
+}
+.container p:first-child,
+.login-status p:first-child {
   font-size: var(--font-size-medium);
   margin-bottom: 2px;
   color: var(--black);
 }
-.container p:nth-child(2) {
+.container p:nth-child(2),
+.login-status p:nth-child(2) {
   color: var(--reddish-gray);
 }
 .container > div a img {
@@ -101,6 +116,19 @@ footer a:hover {
 }
 
 /* signup */
+.signup main {
+  margin-top: 11rem;
+}
+.signup .heading {
+  margin-bottom: 40px;
+  width: 250px;
+}
+.signup .heading a,
+.login-status {
+  display: flex;
+  flex-direction: row;
+  background-color: #fcf6f6;
+}
 .signup-container {
   display: flex;
   flex-direction: column;
@@ -113,8 +141,8 @@ footer a:hover {
 }
 .signup-container > a {
   display: flex;
-  border-radius: 40px;
-  padding: 1.8rem 1.5rem;
+  border-radius: 45px;
+  padding: 1.5rem;
   align-items: center;
   gap: 1rem;
   background-color: var(--white);
@@ -122,6 +150,9 @@ footer a:hover {
   width: 100%;
   justify-content: center;
   color: black;
+}
+.signup-container > a:hover {
+  background-color: #eaeaea2b;
 }
 .signup-container p {
   border-radius: 40px;
@@ -146,4 +177,32 @@ footer a:hover {
 }
 .signup-container > p a:hover {
   text-decoration: underline;
+}
+
+/* login */
+.login main {
+  margin-top: 9rem;
+}
+.signup .heading,
+.login .heading {
+  margin-bottom: 30px;
+  width: 250px;
+}
+.login-status {
+  gap: 1rem;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  width: 100%;
+  border-radius: 40px;
+}
+.login-status img {
+  width: 50px;
+  height: auto;
+}
+.login-status div {
+  flex: 1;
+}
+.login-status p:nth-child(2) {
+  color: var(--reddish-gray);
+  font-size: var(--font-size-small);
 }

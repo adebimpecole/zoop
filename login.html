@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ZOOP - Food Delivery System." />
+    <meta name="keywords" content="Delivery" />
+    <title>ZOOP</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" defer />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Montserrat:ital,wght@0,500;1,500&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Montserrat:ital,wght@0,500;1,500&display=swap"
+        rel="stylesheet"
+        type="text/css"
+      />
+    </noscript>
+
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="script/index.js" defer></script>
+    <script src="script/ratio.js" defer></script>
+    <script src="script/resize.js" defer></script>
+
+    <style>
+      html {
+        height: max-content;
+        min-height: 100vh;
+        width: 100vw;
+        background: var(--white);
+        font-size: var(--font-size-normal);
+        color: var(--black);
+        overflow-x: hidden;
+        background-image: url(./assets/images/bg-image.png);
+        background-size: 80vw auto;
+        /* background-attachment: fixed; */
+        background-position: center bottom;
+        background-repeat: no-repeat;
+      }
+
+      a {
+        text-decoration: none;
+        font-family: inherit;
+        color: inherit;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: var(--font-family-primary);
+        color: var(--gray);
+        min-height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header#page-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        top: 30px;
+        position: sticky;
+        width: 100%;
+        z-index: 40;
+      }
+
+      header#page-header.sticky {
+        position: sticky;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+
+  <body class="login">
+    <header id="page-header">
+      <div class="logo-wrapper">
+        <a href="#" class="logo">
+          <img
+            src="./assets/icons/logo.svg"
+            alt="zoop logo"
+            width="203.76"
+            height="48"
+          />
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <div class="heading">
+        <p class="heading-text">Welcome back Lisa!</p>
+        <!-- <h1 class="heading-text">Sign Up or Login</h1> -->
+        <a href="" class="login-status">
+          <img src="./assets/images/female-avatar.png" alt="female avatar" />
+          <div>
+            <p>Lisa Jackson</p>
+            <p>Logged out</p>
+          </div>
+          <svg
+            width="11"
+            height="18"
+            viewBox="0 0 11 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10.2959 9.7959L2.7959 17.2959C2.58455 17.5072 2.29791 17.626 1.99902 17.626C1.70014 17.626 1.41349 17.5072 1.20215 17.2959C0.990802 17.0846 0.87207 16.7979 0.87207 16.499C0.87207 16.2001 0.990802 15.9135 1.20215 15.7021L7.90621 8.99996L1.20402 2.2959C1.09937 2.19125 1.01636 2.06702 0.959729 1.93029C0.903095 1.79356 0.873945 1.64702 0.873945 1.49902C0.873945 1.35103 0.903095 1.20448 0.959729 1.06776C1.01636 0.931028 1.09937 0.806794 1.20402 0.702147C1.30867 0.5975 1.4329 0.514489 1.56963 0.457855C1.70636 0.40122 1.8529 0.37207 2.0009 0.37207C2.14889 0.37207 2.29543 0.40122 2.43216 0.457855C2.56889 0.514489 2.69313 0.5975 2.79777 0.702147L10.2978 8.20215C10.4025 8.30679 10.4856 8.43108 10.5422 8.56789C10.5988 8.7047 10.6279 8.85135 10.6277 8.99941C10.6275 9.14748 10.5981 9.29405 10.5412 9.43073C10.4843 9.56741 10.4009 9.6915 10.2959 9.7959Z"
+              fill="url(#paint0_linear_5480_2926)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_5480_2926"
+                x1="0.87207"
+                y1="11.7244"
+                x2="10.6277"
+                y2="11.7244"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#FF6315" />
+                <stop offset="0.25" stop-color="#FF411C" />
+                <stop offset="0.5" stop-color="#FF1D23" />
+                <stop offset="0.75" stop-color="#FF0728" />
+                <stop offset="1" stop-color="#FF002A" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </a>
+      </div>
+      <div class="signup-container">
+        <span>Or</span>
+        <a href="">
+          <img src="./assets/icons/google.svg" alt="google icon" />
+          <p>Continue with google</p>
+        </a>
+        <a href="">
+          <img src="./assets/icons/facebook.svg" alt="facebook icon" />
+          <p>Continue with Facebook</p>
+        </a>
+        <p>
+          <span>Restaurant Login</span>
+          <a href="#">Change</a>
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        <a href="#" class="footer-link">Privacy</a>
+        <a href="#" class="footer-link">Terms</a>
+      </p>
+    </footer>
+  </body>
+</html>
