@@ -9,6 +9,7 @@
   padding: 30px;
   justify-content: space-between;
   top: 80px;
+  overflow: visible;
 }
 .today {
   grid-column: 1 / span 2;
@@ -70,34 +71,38 @@
   flex-direction: column;
   gap: 10px;
 }
-.containers{
+.containers {
   grid-column: 1 / span 1;
   grid-row: 3 / span 1;
   margin-top: 20px;
 }
-.recent-orders{
+.recent-orders {
   width: 100%;
   background-color: var(--light-orange);
   border-radius: 30px;
   padding: 15px;
 }
-.orders{
+.orders {
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
-.order, .order div, .order-details .part-one p, .order-details .part-one p div{
+.order,
+.order div,
+.order-details .part-one p,
+.order-details .part-one p div {
   display: flex;
 }
-.order div{
+.order div {
   display: flex;
 }
-.order-details, .order-details .part-one{
+.order-details,
+.order-details .part-one {
   display: flex;
   flex-direction: column;
 }
-.order-details .part-one p, .order-details .part-one p div{
-
+.order-details .part-one p,
+.order-details .part-one p div {
 }
 .earnings {
   width: 320px;
@@ -105,7 +110,8 @@
   grid-column: 2 / span 1;
   grid-row: 2 / span 2;
 }
-.earnings-heading, .recent-heading {
+.earnings-heading,
+.recent-heading {
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -147,9 +153,349 @@
   gap: 5px;
 }
 .earning .id {
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-normal);
   color: var(--black);
+}
+.earning .date,
+.earning .amount {
+  font-size: var(--font-size-small);
 }
 .earning .amount {
   color: var(--black);
+}
+
+/* orders */
+.order-details {
+  width: 800px;
+  height: 95vh;
+  position: fixed;
+  display: none;
+}
+.order-details.show {
+  display: flex!important;
+}
+.order-details .modal-heading {
+  padding: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-gray);
+}
+.order-details .modal-heading svg {
+  cursor: pointer;
+}
+.order-details .modal-heading {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 20px;
+  position: fixed;
+  top: 0;
+  background-color: var(--white);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.order-details .modal-heading > p {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--black);
+  font-size: var(--font-size-small);
+}
+.order-details .modal-body {
+  width: 100%;
+  overflow-y: scroll;
+}
+.order-details .order-content,
+.order-details .order-content .details,
+.order-details .order-info {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+.order-details .order-content {
+  padding: 30px;
+  margin-top: 80px;
+}
+.order-details .order-content .details {
+  flex-direction: column;
+}
+.order-details .order-content > img {
+  background-color: var(--light-yellow);
+  padding: 1rem;
+  border-radius: 20px;
+  height: fit-content;
+}
+.order-details .order-info {
+  gap: 10px;
+  flex-direction: column;
+  border-bottom: 2px dashed var(--border-gray);
+  padding-bottom: 20px;
+}
+.order-details .order-info > div,
+.order-details .order-info div:first-child p,
+.order-details .order-info div:nth-child(3) p,
+.order-details .table-number {
+  display: flex;
+  align-items: center;
+}
+.order-details .order-info div:first-child p {
+  flex: 1;
+  gap: 10px;
+  color: var(--yellow);
+}
+.order-details .order-info div:first-child p span:nth-child(2) {
+  font-size: var(--font-size-medium);
+  color: var(--black);
+}
+.order-details .order-info div:first-child > span {
+  font-size: var(--font-size-small);
+}
+.order-details .order-info div:nth-child(2),
+.order-details .order-info div:nth-child(3) p {
+  gap: 10px;
+}
+.order-details .order-info div:nth-child(3) {
+  gap: 30px;
+}
+.order-details .table-number {
+  justify-content: center;
+  font-size: var(--font-size-large);
+  color: var(--white);
+  background-color: var(--blue);
+  padding: 10px 5px;
+  border-radius: 5px;
+  line-height: 1.2rem;
+}
+.order-details .delivery-info {
+  /* margin-top: 20px; */
+}
+.order-details .delivery-info .order {
+  /* margin-top: 20px; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.order-details .delivery-info .order li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--black);
+}
+.order-details .delivery-info .order li .name {
+  font-size: var(--font-size-medium);
+}
+.order-details .delivery-info .order li:last-child {
+  justify-content: flex-end;
+  align-items: center;
+}
+.order-details .delivery-info .order li:last-child .name {
+  font-size: var(--font-size-normal);
+  color: var(--gray);
+}
+.order-details .delivery-info .order li:last-child .price {
+  font-size: var(--font-size-large);
+}
+.order-details .delivery-info .request {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.order-details .delivery-info .request > span {
+  font-size: var(--font-size-smaller);
+}
+.order-details .delivery-info .request-checkbox {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.order-details textarea {
+  resize: none;
+  height: 100px;
+}
+.order-details textarea ~ label {
+  font-size: var(--font-size-small);
+}
+.checkbox-group {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: span 2 / span 2;
+}
+.checkbox-group label {
+  font-size: var(--font-size-small);
+  color: var(--black);
+}
+.control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 20px;
+  padding-top: 3px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.control input {
+  position: absolute;
+  z-index: 0.2;
+  opacity: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.control_indicator {
+  position: absolute;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border-radius: 20px;
+}
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+  background: var(--border-gray);
+}
+.control input:checked ~ .control_indicator {
+  background: var(--blue);
+}
+.control_indicator,
+.control input:checked:focus ~ .control_indicator {
+  background: var(--blue);
+}
+.control_indicator {
+  background: var(--border-gray);
+  pointer-events: none;
+}
+.control_indicator:after {
+  box-sizing: unset;
+  content: "";
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control_indicator:after {
+  display: block;
+}
+.control-checkbox .control_indicator:after {
+  left: 6px;
+  top: 3px;
+  width: 3px;
+  height: 8px;
+  border: solid var(--white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.control_indicator:after {
+  /* border-color: #e6e6e689; */
+}
+.control-checkbox .control_indicator::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: -0.8rem;
+  margin-top: -0.7rem;
+  background: var(--border-gray);
+  border-radius: 3rem;
+  opacity: 0.6;
+  z-index: 99999;
+  transform: scale(0);
+}
+.control_indicator.hide {
+  z-index: -1;
+}
+@keyframes s-ripple {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+@keyframes s-ripple-dup {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+.control-checkbox input + .control_indicator::before {
+  animation: s-ripple 250ms ease;
+}
+.control-checkbox input:checked + .control_indicator::before {
+  animation-name: s-ripple-dup;
+}
+.order-details .buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.order-details button {
+  padding: 15px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.order-details .decline {
+  background-color: var(--light-red);
+  color: var(--vivid-red);
+  border: 1px solid var(--border-red);
+}
+.order-details .accept {
+  background-color: var(--vivid-green);
+  color: var(--white);
+  border: 1px solid var(--vivid-green);
+}
+.order-details footer,
+.order-details footer p,
+.order-details footer .driver-details,
+.order-details footer .driver-details div,
+.order-details footer .driver-details p {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.order-details footer {
+  justify-content: space-between;
+  margin-top: 40px;
+  border-top: 1px solid var(--border-gray);
+  width: 100%;
+  padding: 20px 30px;
+}
+.order-details footer .driver-details {
+  gap: 20px;
+}
+.order-details .driver-details div,
+.order-details .driver-details p,
+.order-details footer p {
+  gap: 10px;
+  margin: 0;
+}
+.order-details .arrival-time .time {
+  color: var(--vivid-green);
 }

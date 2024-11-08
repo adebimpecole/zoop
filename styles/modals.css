@@ -1,25 +1,15 @@
 .onboarding-modal {
   width: 800px;
-  height: 95vh;
+  height: 90vh;
   padding: 2rem;
   padding-bottom: 9rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   border-radius: 20px;
-  box-shadow: 0 0 0 100vmax #00000080;
   background-image: url(../assets/images/bg-image.png);
   background-size: 80% auto;
   /* background-attachment: fixed; */
   background-position: center bottom;
   background-repeat: no-repeat;
-  position: absolute;
-  z-index: 30;
-  background-color: white;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 .onboarding-modal > .heading {
   width: 100%;
@@ -70,7 +60,7 @@
   align-items: center;
   gap: 1rem;
   flex: 1;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   overflow-x: visible;
   transition: all 0.3s ease;
 }
@@ -147,6 +137,7 @@
 #step-3,
 #step-4 {
   padding-bottom: 2rem;
+  display: flex;
 }
 #step-1 img {
   width: 200px;
@@ -160,6 +151,8 @@
   gap: 0;
   width: 100%;
   padding-bottom: 2rem;
+  flex: 1;
+  overflow-y: scroll;
 }
 #step-1 .body > div,
 #step-2 .body > div,
@@ -174,46 +167,6 @@
 #step-3 form {
   width: 500px;
   padding-top: 10px;
-}
-.controls {
-  text-align: left;
-  position: relative;
-  width: 100%;
-}
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-.controls button {
-  padding: 1.5rem 0.9rem;
-  border: 1px solid var(--border-gray);
-  width: 100%;
-  margin-bottom: 18px;
-  color: var(--black);
-  font-size: var(--font-size-normal);
-  font-weight: 300;
-  background-color: transparent;
-  border-radius: 5px;
-  transition: all 0.3s;
-  display: flex;
-  align-items: center;
-  height: 4rem;
-}
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"],
-.controls button {
-  outline: none;
-  /* border-color: var(--border-focus); */
-}
-label {
-  position: absolute;
-  left: 12px;
-  top: 1.35rem;
-  background-color: var(--white);
-  pointer-events: none;
-  transition: 0.3s;
-  padding: 0 4px;
-  background-color: transparent;
 }
 .dropdown label {
   display: flex;
@@ -233,7 +186,7 @@ input:not(:placeholder-shown) + label,
 .dropdown.selected button + label span {
   background-color: var(--white);
 }
-.controls > ul,
+.floating-controls > ul,
 .dropdown-container {
   border: 1px solid var(--border-gray);
   position: absolute;
@@ -257,7 +210,7 @@ input:not(:placeholder-shown) + label,
 .dropdown.open svg {
   transform: rotate(180deg);
 }
-.controls.open > ul,
+.floating-controls.open > ul,
 .dropdown.open .dropdown-container {
   display: block;
 }
@@ -267,26 +220,26 @@ input:not(:placeholder-shown) + label,
 .dropdown.selected svg {
   display: none;
 }
-.controls > ul li,
-.controls > ul span {
+.floating-controls > ul li,
+.floating-controls > ul span {
   width: 100%;
   text-align: left;
 }
-.controls > ul span,
+.floating-controls > ul span,
 .dropdown-heading {
   padding: 1.5rem 2rem;
   border-bottom: 1px solid var(--border-gray);
   font-size: var(--font-size-small);
   display: block;
 }
-.controls > ul li {
+.floating-controls > ul li {
   padding: 1rem 2rem;
   display: block;
   font-size: var(--font-size-normal);
   color: var(--black);
   cursor: pointer;
 }
-.controls > ul li:hover {
+.floating-controls > ul li:hover {
   padding: 1rem 2rem;
   display: block;
   font-size: var(--font-size-normal);
@@ -350,7 +303,7 @@ input:not(:placeholder-shown) + label,
 #step-3 > .body h2 {
   width: 500px;
 }
-.controls .hint {
+.floating-controls .hint {
   width: 100%;
   text-align: right;
   font-size: var(--font-size-small);
@@ -359,7 +312,7 @@ input:not(:placeholder-shown) + label,
   padding-right: 10px;
   display: block;
 }
-.controls .info {
+.floating-controls .info {
   width: 100%;
   font-size: var(--font-size-small);
   /* margin-top: -10px; */

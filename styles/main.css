@@ -10,7 +10,10 @@
   --vivid-red: #ff0828;
   --white: #ffffff;
   --light-gray: #eaeaea;
+  --lighter-gray: #f9f9f9;
   --gray: #818080;
+  --dark-gray: #807f7f;
+
   --reddish-gray: #aba3a4;
   --black: #000000;
   --blue: #0d74f6;
@@ -20,8 +23,13 @@
   --text-tetiary-color: #d8322d;
   --border-gray: #ececec;
   --green-5: #15d29a0d;
---light-orange: #FFFBF3;
+  --light-orange: #fffbf3;
+  --light-yellow: #fcf8f0;
+  --yellow: #ffb016;
+  --border-red: #ffc4cb;
+  --vivid-green: #00dc73;
 
+  --font-size-smaller: 10px;
   --font-size-small: 12px;
   --font-size-normal: 14px;
   --font-size-medium: 17px;
@@ -29,8 +37,7 @@
   --font-size-xlarge: 25px;
   --font-size-xxlarge: 30px;
 
-  --font-family-primary: "Montserrat", sans-serif;
-  --font-family-secondary: "Berkshire Swash", serif;
+  --font-family-primary: "Manrope", sans-serif;
 }
 main {
   display: flex;
@@ -205,4 +212,67 @@ footer a:hover {
 .login-status p:nth-child(2) {
   color: var(--reddish-gray);
   font-size: var(--font-size-small);
+}
+
+.floating-controls {
+  text-align: left;
+  position: relative;
+  width: 100%;
+}
+.floating-controls input[type="text"],
+.floating-controls input[type="email"],
+.floating-controls input[type="tel"],
+.floating-controls .controls button,
+.floating-controls textarea {
+  padding: 1.5rem 0.9rem;
+  border: 1px solid var(--border-gray);
+  width: 100%;
+  margin-bottom: 18px;
+  color: var(--black);
+  font-size: var(--font-size-small);
+  font-weight: 300;
+  background-color: transparent;
+  border-radius: 5px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+}
+.floating-controls input[type="text"]:focus,
+.floating-controls input[type="email"]:focus,
+.floating-controls input[type="tel"],
+.floating-controls textarea,
+.floating-controls .controls button {
+  outline: none;
+  /* border-color: var(--border-focus); */
+}
+.floating-controls label {
+  position: absolute;
+  left: 12px;
+  top: 1.35rem;
+  background-color: var(--white);
+  pointer-events: none;
+  transition: 0.3s;
+  padding: 0 4px;
+  background-color: transparent;
+}
+.floating-controls.dropdown label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  cursor: pointer;
+}
+.floating-controls input:focus + label,
+.floating-controls input:not(:placeholder-shown) + label,
+.floating-controls textarea:focus + label,
+.floating-controls.dropdown.selected button + label {
+  top: -6px;
+  font-size: var(--font-size-smaller);
+  background-color: var(--white);
+}
+.floating-controls input:focus + label,
+.floating-controls input:not(:placeholder-shown) + label,
+.floating-controls textarea:focus + label,
+.floating-controls.dropdown.selected button + label span {
 }
